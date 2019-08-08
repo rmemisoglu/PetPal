@@ -18,5 +18,8 @@ extension Friend {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var address: String?
+    @NSManaged public var dob: NSDate?
+    @NSManaged public var eyeColor: NSObject?
 
 }

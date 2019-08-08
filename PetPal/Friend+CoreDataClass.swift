@@ -12,5 +12,11 @@ import CoreData
 
 
 public class Friend: NSManagedObject {
-
+    
+    var age: Int {
+        if let dob = dob as? Date {
+            return Calendar.current.dateComponents([.year], from: dob, to:Date()).year!
+        }
+        return 0
+    }
 }
