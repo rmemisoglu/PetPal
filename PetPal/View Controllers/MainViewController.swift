@@ -11,6 +11,8 @@ class MainViewController: UIViewController {
 	private var friendPets = [String:[String]]()
 	private var selected:IndexPath!
 	private var picker = UIImagePickerController()
+    private var images = [String:UIImage]()
+    private var query = ""
 	
     private var appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -79,9 +81,8 @@ class MainViewController: UIViewController {
         friend.dob = data.dob as NSDate
         friend.eyeColor = data.eyeColor
         appDelegate.saveContext()
-        friends.append(friend)
-        let index = IndexPath(row: friends.count - 1, section: 0)
-        collectionView.insertItems(at: [index])
+        refresh()
+        collectionView.reloadData()
         
     }
 	
@@ -127,7 +128,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     private func refresh(){
         let request = Friend.fetchRequest() as NSFetchRequest<Friend>
-        let sort = NSSortDescriptor(keyPath: \Friend.name, ascending: true)
+        
+        //let sort = NSSortDescriptor(keyPath: \Friend.name, ascending: true)
+        if !query.isEmpty {
+            request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
+        }
+        let sort = NSSortDescriptor(key: #keyPath(Friend.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
         request.sortDescriptors = [sort]
         
         do {
@@ -141,25 +147,19 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // Search Bar Delegate
 extension MainViewController:UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-		guard let query = searchBar.text else {
+		guard let txt = searchBar.text else {
 			return
 		}
-		
-        let request = Friend.fetchRequest() as NSFetchRequest<Friend>
-        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
-        let sort = NSSortDescriptor(keyPath: \Friend.name, ascending: true)
-        request.sortDescriptors = [sort]
-        do {
-            friends = try context.fetch(request)
-        } catch let error as NSError {
-            print("Could have an error: \(error)")
-        }
+		query = txt
+        refresh()
+
         
 		searchBar.resignFirstResponder()
 		collectionView.reloadData()
 	}
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        query = ""
         refresh()
 		searchBar.text = nil
 		searchBar.resignFirstResponder()
