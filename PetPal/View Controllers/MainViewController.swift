@@ -23,11 +23,6 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refresh()
-        do {
-            friends = try context.fetch(Friend.fetchRequest())
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
         showEditButton()
     }
     
@@ -131,8 +126,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	}
     
     private func refresh(){
+        let request = Friend.fetchRequest() as NSFetchRequest<Friend>
+        let sort = NSSortDescriptor(keyPath: \Friend.name, ascending: true)
+        request.sortDescriptors = [sort]
+        
         do {
-            friends = try context.fetch(Friend.fetchRequest())
+            friends = try context.fetch(request)
         } catch let error as NSError {
             print("Could have an error: \(error)")
         }
@@ -148,6 +147,8 @@ extension MainViewController:UISearchBarDelegate {
 		
         let request = Friend.fetchRequest() as NSFetchRequest<Friend>
         request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", query)
+        let sort = NSSortDescriptor(keyPath: \Friend.name, ascending: true)
+        request.sortDescriptors = [sort]
         do {
             friends = try context.fetch(request)
         } catch let error as NSError {
