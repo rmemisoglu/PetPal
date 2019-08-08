@@ -7,7 +7,7 @@ import CoreData
 class MainViewController: UIViewController {
 	@IBOutlet private weak var collectionView:UICollectionView!
 	
-	private var friends = [Friend]()
+    private var fetchedRC: NSFetchedResultsController<Friend>!
 	private var friendPets = [String:[String]]()
 	private var selected:IndexPath!
 	private var picker = UIImagePickerController()
@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
 		if segue.identifier == "petSegue" {
 			if let index = sender as? IndexPath {
 				let pvc = segue.destination as! PetsViewController
-				let friend = friends[index.row]
+				let friend = fetchedRC.object(at: index)
 				if let pets = friendPets[friend.name!] {
 					pvc.pets = pets
 				}
@@ -88,7 +88,10 @@ class MainViewController: UIViewController {
 	
 	// MARK:- Private Methods
 	private func showEditButton() {
-		if friends.count > 0 {
+        guard let objs = fetchedRC.fetchedObjects else {
+            return
+        }
+		if objs.count > 0 {
 			navigationItem.leftBarButtonItem = editButtonItem
 		}
 	}
@@ -97,13 +100,13 @@ class MainViewController: UIViewController {
 // Collection View Delegates
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		let count = friends.count
+		let count = fetchedRC.fetchedObjects?.count ?? 0
 		return count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
-		let friend = friends[indexPath.row]
+		let friend = fetchedRC.object(at: indexPath)
 		cell.nameLabel.text = friend.name!
         cell.addressLabel.text = friend.address
         cell.ageLabel.text = "Age: \(friend.age)"
@@ -137,7 +140,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         request.sortDescriptors = [sort]
         
         do {
-            friends = try context.fetch(request)
+            fetchedRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            try fetchedRC.performFetch()
         } catch let error as NSError {
             print("Could have an error: \(error)")
         }
@@ -171,7 +175,7 @@ extension MainViewController:UISearchBarDelegate {
 extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 		let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-		let friend = friends[selected.row]
+		let friend = fetchedRC.object(at: selected)
 		friend.photo = UIImagePNGRepresentation(image) as NSData?
         appDelegate.saveContext()
 		collectionView?.reloadItems(at: [selected])
