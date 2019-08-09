@@ -33,13 +33,13 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t6b-CH-oUp">
                                     <size key="itemSize" width="155" height="255"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="375" height="36"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCell" id="kby-g8-AAG" customClass="FriendCell" customModule="PetPal" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="155" height="255"/>
+                                        <rect key="frame" x="20" y="36" width="155" height="255"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="255"/>
@@ -109,6 +109,24 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderRow" id="8Jo-Wy-Ra7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmb-nH-xzv">
+                                            <rect key="frame" x="8" y="8.5" width="359" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="dmb-nH-xzv" firstAttribute="centerY" secondItem="8Jo-Wy-Ra7" secondAttribute="centerY" id="3KZ-jF-76Z"/>
+                                        <constraint firstAttribute="trailing" secondItem="dmb-nH-xzv" secondAttribute="trailing" constant="8" id="AWp-f1-7rl"/>
+                                        <constraint firstItem="dmb-nH-xzv" firstAttribute="leading" secondItem="8Jo-Wy-Ra7" secondAttribute="leading" constant="8" id="kET-jG-VZs"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="QhV-H5-8Pu" id="W5B-IU-8QU"/>
                                     <outlet property="delegate" destination="QhV-H5-8Pu" id="Era-HP-gmA"/>
@@ -141,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDt-Vn-gc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="143"/>
+            <point key="canvasLocation" x="701.60000000000002" y="142.57871064467767"/>
         </scene>
         <!--Pets-->
         <scene sceneID="rCA-d6-8P9">

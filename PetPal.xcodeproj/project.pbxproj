@@ -10,6 +10,7 @@
 		485B1A5422FBF7E500F2F247 /* PetPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 485B1A5222FBF7E500F2F247 /* PetPal.xcdatamodeld */; };
 		485B1A5722FBF88900F2F247 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B1A5522FBF88900F2F247 /* Friend+CoreDataClass.swift */; };
 		485B1A6022FC09B700F2F247 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */; };
+		485B1A6322FC500E00F2F247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 485B1A6122FC500E00F2F247 /* Main.storyboard */; };
 		DD6B333C1F56DAD800F4C248 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B333B1F56DAD800F4C248 /* PetsViewController.swift */; };
 		DD6B33401F56E05F00F4C248 /* FriendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B333F1F56E05F00F4C248 /* FriendData.swift */; };
 		DD6B33421F56E1A900F4C248 /* PetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B33411F56E1A900F4C248 /* PetData.swift */; };
@@ -19,7 +20,6 @@
 		DD719FFD1F579056008392C8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD719FFC1F579056008392C8 /* Date+Extension.swift */; };
 		DD952D651F56D8AA00AF81B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD952D641F56D8AA00AF81B8 /* AppDelegate.swift */; };
 		DD952D671F56D8AA00AF81B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD952D661F56D8AA00AF81B8 /* MainViewController.swift */; };
-		DD952D6A1F56D8AA00AF81B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD952D681F56D8AA00AF81B8 /* Main.storyboard */; };
 		DD952D6C1F56D8AA00AF81B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD952D6B1F56D8AA00AF81B8 /* Assets.xcassets */; };
 		DD952D6F1F56D8AA00AF81B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD952D6D1F56D8AA00AF81B8 /* LaunchScreen.storyboard */; };
 		DDB438961F579FDB0078BBAD /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB438951F579FDB0078BBAD /* Int+Extension.swift */; };
@@ -29,6 +29,7 @@
 		485B1A5322FBF7E500F2F247 /* PetPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetPal.xcdatamodel; sourceTree = "<group>"; };
 		485B1A5522FBF88900F2F247 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
 		485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataProperties.swift"; path = "../Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		485B1A6222FC500E00F2F247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../../Downloads/04/Final/PetPal/Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD6B333B1F56DAD800F4C248 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		DD6B333F1F56E05F00F4C248 /* FriendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendData.swift; sourceTree = "<group>"; };
 		DD6B33411F56E1A900F4C248 /* PetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetData.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		DD952D611F56D8AA00AF81B8 /* PetPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD952D641F56D8AA00AF81B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD952D661F56D8AA00AF81B8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DD952D691F56D8AA00AF81B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD952D6B1F56D8AA00AF81B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD952D6E1F56D8AA00AF81B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD952D701F56D8AA00AF81B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		DD6B333A1F56DA4200F4C248 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DD952D681F56D8AA00AF81B8 /* Main.storyboard */,
+				485B1A6122FC500E00F2F247 /* Main.storyboard */,
 				DD952D6B1F56D8AA00AF81B8 /* Assets.xcassets */,
 				DD952D6D1F56D8AA00AF81B8 /* LaunchScreen.storyboard */,
 				485B1A5222FBF7E500F2F247 /* PetPal.xcdatamodeld */,
@@ -196,9 +196,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485B1A6322FC500E00F2F247 /* Main.storyboard in Resources */,
 				DD952D6F1F56D8AA00AF81B8 /* LaunchScreen.storyboard in Resources */,
 				DD952D6C1F56D8AA00AF81B8 /* Assets.xcassets in Resources */,
-				DD952D6A1F56D8AA00AF81B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,10 +228,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DD952D681F56D8AA00AF81B8 /* Main.storyboard */ = {
+		485B1A6122FC500E00F2F247 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DD952D691F56D8AA00AF81B8 /* Base */,
+				485B1A6222FC500E00F2F247 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
