@@ -111,10 +111,10 @@ class PetsViewController: UIViewController {
     }
     
     func collectionViewCellCircle(sender: UICollectionViewCell){
-        if let imageLayer = sender.viewWithTag(10022) as? UIImageView {
-            imageLayer.layer.cornerRadius = 91
-            //imageLayer.layer.masksToBounds = true
-        }
+//        if let imageLayer = sender.viewWithTag(10022) as? UIImageView {
+//            imageLayer.layer.cornerRadius = 15
+//            //imageLayer.layer.masksToBounds = true
+//        }
         let contactRect = CGRect(x: sender.bounds.origin.x - 5, y: sender.bounds.origin.y - 5, width: sender.bounds.width + 10, height: sender.bounds.height + 10)
         
         sender.layer.cornerRadius = sender.bounds.height / 2
@@ -161,10 +161,6 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.pictureImageView.image = UIImage(named: "pet-placeholder")
         }
         collectionViewCellCircle(sender: cell)
-//        cell.pictureImageView.layer.cornerRadius = cell.pictureImageView.bounds.height / 2
-//        cell.pictureImageView.layer.masksToBounds = true
-//        imageLayer.layer.cornerRadius = imageLayer.bounds.height / 2
-//        imageLayer.layer.masksToBounds = true
         return cell
     }
     
