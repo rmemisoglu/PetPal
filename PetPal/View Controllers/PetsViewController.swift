@@ -69,6 +69,7 @@ class PetsViewController: UIViewController {
         request.sortDescriptors = [sort]
         do {
             fetchedRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            //fetchedRC.delegate = self
             try fetchedRC.performFetch()
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -108,6 +109,28 @@ class PetsViewController: UIViewController {
         refresh()
         collectionView.reloadData()
     }
+    
+    func collectionViewCellCircle(sender: UICollectionViewCell){
+        if let imageLayer = sender.viewWithTag(10022) as? UIImageView {
+            imageLayer.layer.cornerRadius = 91
+            //imageLayer.layer.masksToBounds = true
+        }
+        let contactRect = CGRect(x: sender.bounds.origin.x - 5, y: sender.bounds.origin.y - 5, width: sender.bounds.width + 10, height: sender.bounds.height + 10)
+        
+        sender.layer.cornerRadius = sender.bounds.height / 2
+        //sender.layer.masksToBounds = true
+        //sender.contentView.layer.borderWidth = 1.0
+        
+        sender.layer.shadowColor = UIColor.black.cgColor
+        sender.layer.shadowOffset = .zero//CGSize(width: 20, height: 7.0)
+        sender.layer.shadowRadius = 10.0
+        sender.layer.shadowOpacity = 0.8
+        sender.layer.masksToBounds = false
+        sender.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
+
+        
+        
+    }
 }
 
 // Collection View Delegates
@@ -123,6 +146,7 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCell", for: indexPath) as! PetCell
+        
         let pet = fetchedRC.object(at: indexPath)
         cell.nameLabel.text = pet.name
         cell.animalLabel.text = pet.kind
@@ -136,6 +160,11 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             cell.pictureImageView.image = UIImage(named: "pet-placeholder")
         }
+        collectionViewCellCircle(sender: cell)
+//        cell.pictureImageView.layer.cornerRadius = cell.pictureImageView.bounds.height / 2
+//        cell.pictureImageView.layer.masksToBounds = true
+//        imageLayer.layer.cornerRadius = imageLayer.bounds.height / 2
+//        imageLayer.layer.masksToBounds = true
         return cell
     }
     
@@ -165,6 +194,23 @@ extension PetsViewController:UISearchBarDelegate {
         collectionView.reloadData()
     }
 }
+//Fetched Delegata
+//extension PetsViewController: NSFetchedResultsControllerDelegate {
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didCahnge andObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        let index = indexPath ?? (newIndexPath ?? nil)
+//        guard let cellindex = index else {
+//            return
+//        }
+//        switch type {
+//        case .insert:
+//            collectionView.insertItems(at: [cellindex])
+//        case .delete:
+//            collectionView.deleteItems(at: [cellindex])
+//        default:
+//            break
+//        }
+//    }
+//}
 
 // Image Picker Delegates
 extension PetsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

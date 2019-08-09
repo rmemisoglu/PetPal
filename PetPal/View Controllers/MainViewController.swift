@@ -51,9 +51,6 @@ class MainViewController: UIViewController {
         sender.layer.masksToBounds = false
         sender.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
         //sender.layer.shadowPath = UIBezierPath.init(roundedRect: CGRect(x: sender.bounds.origin.x - 10, y: sender.bounds.origin.y, width: sender.bounds.width+20, height: sender.bounds.height+5), cornerRadius: sender.contentView.layer.cornerRadius).cgPath
-
-        
-
     }
 	// MARK:- Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
