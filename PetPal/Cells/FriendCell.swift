@@ -1,6 +1,6 @@
 //
 //  Created by Ramazan Memişoğlu on 8.08.2019.
-//  Copyright © 2019 Razeware. All rights reserved.
+//  Copyright © 2019 All rights reserved.
 //
 //
 
