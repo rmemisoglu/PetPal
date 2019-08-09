@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483D0A3D22FD37C700A72394 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D0A3A22FD37C700A72394 /* Pet+CoreDataClass.swift */; };
+		483D0A3E22FD37C700A72394 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483D0A3B22FD37C700A72394 /* Pet+CoreDataProperties.swift */; };
+		483D0A4422FD465300A72394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483D0A4222FD465300A72394 /* Main.storyboard */; };
 		485B1A5422FBF7E500F2F247 /* PetPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 485B1A5222FBF7E500F2F247 /* PetPal.xcdatamodeld */; };
 		485B1A5722FBF88900F2F247 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B1A5522FBF88900F2F247 /* Friend+CoreDataClass.swift */; };
 		485B1A6022FC09B700F2F247 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */; };
-		485B1A6322FC500E00F2F247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 485B1A6122FC500E00F2F247 /* Main.storyboard */; };
 		DD6B333C1F56DAD800F4C248 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B333B1F56DAD800F4C248 /* PetsViewController.swift */; };
 		DD6B33401F56E05F00F4C248 /* FriendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B333F1F56E05F00F4C248 /* FriendData.swift */; };
 		DD6B33421F56E1A900F4C248 /* PetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6B33411F56E1A900F4C248 /* PetData.swift */; };
@@ -26,10 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		483D0A3A22FD37C700A72394 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		483D0A3B22FD37C700A72394 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		483D0A4322FD465300A72394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../../Downloads/06/Starter/PetPal/PetPal/Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		485B1A5322FBF7E500F2F247 /* PetPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetPal.xcdatamodel; sourceTree = "<group>"; };
 		485B1A5522FBF88900F2F247 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
-		485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataProperties.swift"; path = "../Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		485B1A6222FC500E00F2F247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../../../Downloads/04/Final/PetPal/Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DD6B333B1F56DAD800F4C248 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		DD6B333F1F56E05F00F4C248 /* FriendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendData.swift; sourceTree = "<group>"; };
 		DD6B33411F56E1A900F4C248 /* PetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetData.swift; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		DD6B333A1F56DA4200F4C248 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				485B1A6122FC500E00F2F247 /* Main.storyboard */,
+				483D0A4222FD465300A72394 /* Main.storyboard */,
 				DD952D6B1F56D8AA00AF81B8 /* Assets.xcassets */,
 				DD952D6D1F56D8AA00AF81B8 /* LaunchScreen.storyboard */,
 				485B1A5222FBF7E500F2F247 /* PetPal.xcdatamodeld */,
@@ -97,8 +101,6 @@
 		DD952D631F56D8AA00AF81B8 /* PetPal */ = {
 			isa = PBXGroup;
 			children = (
-				485B1A5522FBF88900F2F247 /* Friend+CoreDataClass.swift */,
-				485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */,
 				DD952D781F56D95300AF81B8 /* Cells */,
 				DD952D771F56D94300AF81B8 /* Data */,
 				DD719FF91F578F82008392C8 /* Extensions */,
@@ -122,6 +124,10 @@
 		DD952D771F56D94300AF81B8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				485B1A5E22FC09B700F2F247 /* Friend+CoreDataProperties.swift */,
+				483D0A3A22FD37C700A72394 /* Pet+CoreDataClass.swift */,
+				483D0A3B22FD37C700A72394 /* Pet+CoreDataProperties.swift */,
+				485B1A5522FBF88900F2F247 /* Friend+CoreDataClass.swift */,
 				DD6B333F1F56E05F00F4C248 /* FriendData.swift */,
 				DD6B33411F56E1A900F4C248 /* PetData.swift */,
 			);
@@ -196,7 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485B1A6322FC500E00F2F247 /* Main.storyboard in Resources */,
+				483D0A4422FD465300A72394 /* Main.storyboard in Resources */,
 				DD952D6F1F56D8AA00AF81B8 /* LaunchScreen.storyboard in Resources */,
 				DD952D6C1F56D8AA00AF81B8 /* Assets.xcassets in Resources */,
 			);
@@ -211,6 +217,7 @@
 			files = (
 				485B1A5422FBF7E500F2F247 /* PetPal.xcdatamodeld in Sources */,
 				485B1A5722FBF88900F2F247 /* Friend+CoreDataClass.swift in Sources */,
+				483D0A3D22FD37C700A72394 /* Pet+CoreDataClass.swift in Sources */,
 				DD952D671F56D8AA00AF81B8 /* MainViewController.swift in Sources */,
 				DD6B33441F56EC2400F4C248 /* FriendCell.swift in Sources */,
 				DD6B333C1F56DAD800F4C248 /* PetsViewController.swift in Sources */,
@@ -219,6 +226,7 @@
 				DDB438961F579FDB0078BBAD /* Int+Extension.swift in Sources */,
 				DD6B33461F56EC3300F4C248 /* PetCell.swift in Sources */,
 				DD6B33421F56E1A900F4C248 /* PetData.swift in Sources */,
+				483D0A3E22FD37C700A72394 /* Pet+CoreDataProperties.swift in Sources */,
 				DD6B33401F56E05F00F4C248 /* FriendData.swift in Sources */,
 				DD719FFD1F579056008392C8 /* Date+Extension.swift in Sources */,
 				485B1A6022FC09B700F2F247 /* Friend+CoreDataProperties.swift in Sources */,
@@ -228,10 +236,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		485B1A6122FC500E00F2F247 /* Main.storyboard */ = {
+		483D0A4222FD465300A72394 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				485B1A6222FC500E00F2F247 /* Base */,
+				483D0A4322FD465300A72394 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
